@@ -3,6 +3,23 @@ import http from 'http';
 import { Server } from 'socket.io';
 import net from 'net';
 import socketConn from './serverSocket/ServerSocket';
+import { Sequelize } from 'sequelize';
+import { development } from '../config/config.json'
+
+
+const sequelize = new Sequelize({
+  ...development, pool: {
+    max: 10,
+    min: 2,
+    acquire: 30000,
+    idle: 10000
+  }
+});
+sequelize.authenticate().then(() => {
+  console.log('Connection has been established successfully.');
+}).catch(error => {
+  console.error('Unable to connect to the database:', error);
+});
 
 const app = express();
 const server = http.createServer(app);
