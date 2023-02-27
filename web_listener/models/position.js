@@ -22,7 +22,10 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     x: DataTypes.FLOAT,
     y: DataTypes.FLOAT,
-    z: DataTypes.FLOAT
+    z: DataTypes.FLOAT,
+    ax: DataTypes.FLOAT,
+    ay: DataTypes.FLOAT,
+    az: DataTypes.FLOAT
   }, {
     sequelize,
     modelName: 'Position',

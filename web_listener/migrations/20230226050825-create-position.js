@@ -24,6 +24,15 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      ax: {
+        type: Sequelize.FLOAT
+      },
+      ay: {
+        type: Sequelize.FLOAT
+      },
+      az: {
+        type: Sequelize.FLOAT
+      },
       x: {
         type: Sequelize.FLOAT
       },
