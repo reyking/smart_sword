@@ -1,5 +1,9 @@
 #ifndef DATA_H
 #define DATA_H
+#ifndef POOL_DATA_LENGHT
+#define POOL_DATA_LENGHT 100
+#endif
+
 #include <queue>
 
 namespace sword
@@ -16,7 +20,10 @@ namespace sword
         const char * readable_out();
     };
     extern std::queue<data> dataPool;
-    char * serializePool();
+    extern char * buffer;
+    char * serializePool(bool clear=0);
+    void clean();
+
 }
 
 #endif

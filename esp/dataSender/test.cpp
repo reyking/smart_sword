@@ -7,11 +7,6 @@ int main(){
     }
     printf("tamano: %d", sword::dataPool.size());
     sword::data * temp = 0;
-    do
-    {
-        temp = &sword::dataPool.front();
-        temp->readable_out();
-        sword::dataPool.pop();
-    }
-    while (sword::dataPool.size());
+    char* serializado = sword::serializePool();
+    printf(serializado);
 }
